@@ -28,10 +28,6 @@
 //
 // **/
 
-function pipe<T>(...fns: Array<(arg: T) => T>): (arg: T) => T {
-  return (arg: T) => fns.reduce((value, fn) => fn(value), arg)
-}
-
 import express from 'express'
 import * as fs from 'fs'
 
