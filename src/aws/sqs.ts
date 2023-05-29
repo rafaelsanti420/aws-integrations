@@ -1,5 +1,5 @@
 import AWS from 'aws-sdk'
-import { ApplicationConfiguration } from './config'
+import { ApplicationConfiguration } from './aws-config'
 
 AWS.config.update({
   region: ApplicationConfiguration.region, // Replace with your desired region
