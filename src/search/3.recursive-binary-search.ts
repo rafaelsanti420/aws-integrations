@@ -1,5 +1,3 @@
-import { orderedNumbers } from '../data'
-
 function recursiveBinarySearch(
   searchableList: number[],
   target: number
@@ -24,4 +22,4 @@ function recursiveBinarySearch(
   return recursiveBinarySearch(searchableList.slice(0, midpoint), target)
 }
 
-console.log(recursiveBinarySearch(orderedNumbers, 7))
+console.log(recursiveBinarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7))

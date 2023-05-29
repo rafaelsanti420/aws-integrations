@@ -1,5 +1,3 @@
-import { orderedNumbers } from '../data'
-
 // Returns index of the target in list
 
 function strictLinearSearch(searchableList: number[], target: number): number {
@@ -13,4 +11,4 @@ function strictLinearSearch(searchableList: number[], target: number): number {
   throw new Error('not found')
 }
 
-console.log(strictLinearSearch(orderedNumbers, 7))
+console.log(strictLinearSearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
