@@ -6,20 +6,38 @@ function splitF<T>(list: T[]): [T[], T[]] {
   return [left, right]
 }
 
-function mergeF<T>(left, right) {
-	const l = []
+const merge = (ar1: number[], ar2: number[]) => {
+  const combined = []
+  let i = 0
+  let j = 0
 
+  while (i < ar1.length && j < ar2.length) {
+    if (ar1[i] < ar2[j]) {
+      combined.push(ar1[i])
+      i++
+    } else {
+      combined.push(ar2[j])
+      j++
+    }
+  }
 
+  while (i < ar1.length) {
+    combined.push(ar1[i])
+    i++
+  }
+  while (j < ar2.length) {
+    combined.push(ar2[j])
+    j++
+  }
 
-	while
-
+  return combined
 }
 
-function mergeSort<T>(list: T[]): T[] {
+function mergeSort(list: number[]): number[] {
   if (list.length <= 1) {
     return list
   }
-  const [leftHalf, rightHalf] = splitF(list)
+  const [leftHalf, rightHalf] = splitF<number>(list)
 
   const left = mergeSort(leftHalf)
   const right = mergeSort(rightHalf)
@@ -27,4 +45,4 @@ function mergeSort<T>(list: T[]): T[] {
   return merge(left, right)
 }
 
-console.log(mergeSort<number>([3, 46, 3, 2, 45, 6, 7, 23, 1, 2, 7, 9]))
+console.log(mergeSort([3, 46, 3, 2, 45, 6, 7, 23, 1, 2, 7, 9]))
